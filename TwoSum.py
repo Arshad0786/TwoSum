@@ -17,7 +17,7 @@ class Solution:
 explain : if A + B = target, then A = target - B,
 so if we have a list [3,7,12,4],
 we scan through the elements one by one to check if the rest of elements in the list
-equals target - current element.
+= target - current element.
 Ex:set target to 15, we choose 3 -> we create a list of [7,12,4], then we scan if 7, 12, 4 = 15 - 3
 12 does, then we output the index of both 3 and 12.
 """
