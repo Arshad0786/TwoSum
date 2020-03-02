@@ -1,5 +1,5 @@
 import unittest
-from TwoSum import Solution
+from NewTwoSum import Solution
 
 
 class TwoSumTest(unittest.TestCase):
@@ -23,9 +23,9 @@ class TwoSumTest(unittest.TestCase):
     
     def test_first_last(self):
         temp = Solution()
-        self.list = [0, 1, 2, 3, 4, 5, 6, 7]
-        self.target = 8
-        self.assertEqual(temp.twoSum(self.list, self.target), [1, 7])
+        self.list = [0, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21]
+        self.target = 21
+        self.assertEqual(temp.twoSum(self.list, self.target), [0, 11])
 
     def test_first_middle(self):
         temp = Solution()
