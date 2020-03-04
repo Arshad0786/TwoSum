@@ -34,9 +34,9 @@ class TwoSumTest(unittest.TestCase):
         self.assertEqual(temp.twoSum(self.list, self.target), [0, 7])
         # Two Sum should output the first pair of numbers in the list that fits
 
-    def test_negetive_in_list(self):
+    def test_negetive_in_list_and_target(self):
         temp = Solution()
-        self.list = [0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10]
+        self.list = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10]
         self.target = -11
         self.assertEqual(temp.twoSum(self.list, self.target), [1, 10])
 
@@ -52,6 +52,21 @@ class TwoSumTest(unittest.TestCase):
         self.target = 4
         self.assertEqual(temp.twoSum(self.list, self.target), None)
 
+    def test_none_integer_target(self):
+        temp = Solution()
+        self.list = [0, 1, 2, 3, 4, 5, 6, 7]
+        self.target = ""
+        self.assertEqual(temp.twoSum(self.list, self.target), None)
+
+    def test_target_isnt_given(self):
+        temp = Solution()
+        self.list = [0,1,2,3,4,5,6,7]
+        self.assertEqual(temp.twoSum(nums = self.list), None)
+
+    def test_nums_isnt_given(self):
+        temp = Solution()
+        self.target = 20
+        self.assertEqual(temp.twoSum(target = self.target), None)
 
 if __name__ == "__main__":
     unittest.main()

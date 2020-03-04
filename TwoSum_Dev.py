@@ -1,8 +1,9 @@
 class Solution:
-    def twoSum(self, nums, target):
+    def twoSum(self, nums=[], target=None):
         output = list()
         for i in nums:
-            if (type(i) != type(int())):
+            if ((type(i) != type(int())) or (type(target) != type(int()))):
+                # Make sure that both numlist and target contains only integers
                 return None
         TempNums = nums.copy()
         try:
