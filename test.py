@@ -60,13 +60,31 @@ class TwoSumTest(unittest.TestCase):
 
     def test_target_isnt_given(self):
         temp = Solution()
-        self.list = [0,1,2,3,4,5,6,7]
-        self.assertEqual(temp.twoSum(nums = self.list), None)
+        self.list = [0, 1, 2, 3, 4, 5, 6, 7]
+        self.assertEqual(temp.twoSum(nums=self.list), None)
 
     def test_nums_isnt_given(self):
         temp = Solution()
         self.target = 20
-        self.assertEqual(temp.twoSum(target = self.target), None)
+        self.assertEqual(temp.twoSum(target=self.target), None)
+
+    def test_one_same_num(self):
+        temp = Solution()
+        self.target = 40
+        self.list = [0, 20, 39, 50, 7, 20]
+        self.assertEqual(temp.twoSum(self.list, self.target), [1,5])
+
+    def test_two_same_num(self):
+        temp = Solution()
+        self.target = 40
+        self.list = [0, 20, 39, 50, 7]
+        self.assertEqual(temp.twoSum(self.list, self.target), None)
+
+    def both_one_and_two_same_num(self):
+        temp = Solution()
+        self.target = 6
+        self.list = [3,2,4]
+        self.assertEqual(temp.twoSum(self.list, self.target), [1,2])
 
 if __name__ == "__main__":
     unittest.main()
