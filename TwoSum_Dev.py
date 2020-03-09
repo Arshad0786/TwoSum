@@ -2,14 +2,14 @@ class Solution:
     def twoSum(self, nums=[], target=None):
         output = list()
 
-        def notInt(input):
-            if type(input) != type(int()):
+        def isInt(input):
+            if type(input) == type(int()):
                 return True
             else:
                 return False
 
         for number in nums:
-            if (notInt(number) or notInt(target)):
+            if (not isInt(number) or not isInt(target)):
                 return None
 
         try:
