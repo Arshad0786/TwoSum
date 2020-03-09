@@ -1,22 +1,30 @@
 class Solution:
     def twoSum(self, nums=[], target=None):
         output = list()
-        for i in nums:
-            if ((type(i) != type(int())) or (type(target) != type(int()))):
-                # Make sure that both numlist and target contains only integers
+
+        def notInt(input):
+            if type(input) != type(int()):
+                return True
+            else:
+                return False
+
+        for number in nums:
+            if (notInt(number) or notInt(target)):
                 return None
-        TempNums = nums.copy()
+
         try:
-            for i in nums:
-                if(((target - i) in TempNums) and (i in TempNums)):
-                    if((target - i == i) and nums.count(i) == 1):
-                        continue
-                    # (i != target - i) : if target - i = i, ((target - i) in TempNums) and (i in TempNums) will be
-                    # both True, but there will only be one value in TempNums, for example, let's have a list of
-                    # [1,3,5,7,9] if the target is 10, then when 5 is being scanned, 5 and 10 - 5 are both in list,
-                    # but there is only one 5  in the List so it's invalid.
-                    output=([nums.index(i), nums.index(target - i,nums.index(i)+1)])
-                    return output
+            for number in nums:
+                if((target - number) not in nums):
+                    continue
+
+                if((target - number == number) and nums.count(number) == 1):
+                    continue
+
+                output = ([nums.index(number), nums.index(
+                    target - number, nums.index(number)+1)])
+
+                return output
+
             else:
                 return None
 
