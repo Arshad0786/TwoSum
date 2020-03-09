@@ -2,14 +2,11 @@ class Solution:
     def twoSum(self, nums=[], target=None):
         output = list()
 
-        def isInt(input):
-            if type(input) == type(int()):
-                return True
-            else:
-                return False
+        if (not self.isInt(target)):
+            return None
 
         for number in nums:
-            if (not isInt(number) or not isInt(target)):
+            if (not self.isInt(number)):
                 return None
 
         try:
@@ -30,3 +27,9 @@ class Solution:
 
         except SyntaxError:
             return None
+
+    def isInt(self, input):
+        if type(input) == type(int()):
+            return True
+        else:
+            return False
