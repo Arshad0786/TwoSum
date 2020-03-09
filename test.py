@@ -68,13 +68,13 @@ class TwoSumTest(unittest.TestCase):
         self.target = 20
         self.assertEqual(temp.twoSum(target=self.target), None)
 
-    def test_one_same_num(self):
+    def test_two_same_num(self):
         temp = Solution()
         self.target = 40
         self.list = [0, 20, 39, 50, 7, 20]
-        self.assertEqual(temp.twoSum(self.list, self.target), [1,5])
+        self.assertEqual(temp.twoSum(self.list, self.target), [1, 5])
 
-    def test_two_same_num(self):
+    def test_one_same_num(self):
         temp = Solution()
         self.target = 40
         self.list = [0, 20, 39, 50, 7]
@@ -83,8 +83,9 @@ class TwoSumTest(unittest.TestCase):
     def both_one_and_two_same_num(self):
         temp = Solution()
         self.target = 6
-        self.list = [3,2,4]
-        self.assertEqual(temp.twoSum(self.list, self.target), [1,2])
+        self.list = [3, 2, 4]
+        self.assertEqual(temp.twoSum(self.list, self.target), [1, 2])
+
 
 if __name__ == "__main__":
     unittest.main()
