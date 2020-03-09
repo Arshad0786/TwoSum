@@ -9,7 +9,6 @@ class Solution:
             if (not self.isInt(number)):
                 return None
 
-        try:
             for number in nums:
                 if((target - number) not in nums):
                     continue
@@ -24,9 +23,6 @@ class Solution:
 
             else:
                 return None
-
-        except SyntaxError:
-            return None
 
     def isInt(self, input):
         if type(input) == type(int()):
