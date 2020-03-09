@@ -9,20 +9,19 @@ class Solution:
             if (not self.isInt(number)):
                 return None
 
-            for number in nums:
-                if((target - number) not in nums):
-                    continue
+        for number in nums:
+            if((target - number) not in nums):
+                continue
 
-                if((target - number == number) and nums.count(number) == 1):
-                    continue
+            if((target - number == number) and nums.count(number) == 1):
+                continue
 
-                output = ([nums.index(number), nums.index(
-                    target - number, nums.index(number)+1)])
+            output = ([nums.index(number), nums.index(
+                target - number, nums.index(number)+1)])
 
-                return output
+            return output
 
-            else:
-                return None
+        return None
 
     def isInt(self, input):
         if type(input) == type(int()):
